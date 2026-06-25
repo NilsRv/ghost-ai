@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Completed feature unit 02
+- Completed feature unit 03
 
 ## Current Goal
 
-- Editor chrome shell implemented and verified in the app workspace.
+- Clerk auth is implemented and wired into the workspace entry flow.
 
 ## Completed
 
@@ -22,6 +22,11 @@ Update this file whenever the current phase, active feature, or implementation s
 - Added a floating project sidebar shell with slide-in behavior, tabs, empty states, and a full-width `New Project` action.
 - Added a reusable editor dialog shell component styled against the project dark theme tokens for future dialogs.
 - Replaced the homepage showcase with an editor workspace shell that verifies the chrome components together.
+- Installed `@clerk/ui` and configured `ClerkProvider` in the root layout with the bundled Clerk UI and the app token-based dark appearance overrides.
+- Added protected auth routing with root `proxy.ts`, public Clerk auth paths, and home-route redirects based on signed-in state.
+- Created minimal Clerk sign-in and sign-up pages that follow the feature spec layout and reuse the existing CSS variable theme.
+- Moved the editor workspace shell to `/editor` and added Clerk’s built-in `UserButton` to the navbar.
+- Refined the auth shell to a 50/50 desktop layout with a branded left-side panel that better matches the target reference.
 
 ## In Progress
 
@@ -29,7 +34,7 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Next Up
 
-- Start the next feature spec that builds on the editor workspace shell.
+- Start the next feature spec that builds on authenticated workspace access.
 
 ## Open Questions
 
@@ -41,6 +46,6 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Session Notes
 
+- Auth implementation is based on `context/feature-specs/03-auth.md`.
+- `npm run build` passes.
 - `npm run lint` passes.
-- `npm run build` passes after allowing network access for `next/font/google`.
-- Implemented `context/feature-specs/02-editor-chrome.md`.
