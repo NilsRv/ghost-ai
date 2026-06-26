@@ -122,6 +122,7 @@ export function ProjectSidebar({
           isOpen ? "translate-x-0" : "-translate-x-[calc(100%+1rem)]",
         )}
         aria-hidden={!isOpen}
+        inert={!isOpen}
       >
         <div className="pointer-events-auto flex w-full flex-col rounded-3xl border border-surface-border bg-bg-surface/92 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur">
           <div className="flex items-center justify-between border-b border-surface-border px-5 py-4">

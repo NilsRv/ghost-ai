@@ -47,6 +47,14 @@ function slugifyProjectName(value: string) {
   return normalized || "project-slug";
 }
 
+function createProjectId() {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return `project-${crypto.randomUUID()}`;
+  }
+
+  return `project-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+}
+
 export function useProjectDialogState() {
   const [projects, setProjects] = useState(INITIAL_PROJECTS);
   const [activeDialog, setActiveDialog] = useState<ActiveDialog | null>(null);
@@ -116,13 +124,14 @@ export function useProjectDialogState() {
     }
 
     setIsLoading(true);
+    const slug = slugifyProjectName(trimmedName);
 
     startTransition(() => {
       setProjects((currentProjects) => [
         {
-          id: `project-${slugifyProjectName(trimmedName)}`,
+          id: createProjectId(),
           name: trimmedName,
-          slug: slugifyProjectName(trimmedName),
+          slug,
           role: "owner",
         },
         ...currentProjects,
