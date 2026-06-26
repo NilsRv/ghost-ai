@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Completed feature unit 03
+- Completed feature unit 04
 
 ## Current Goal
 
-- Clerk auth is implemented and wired into the workspace entry flow.
+- Project dialogs and the `/editor` home flow are implemented with mock data.
 
 ## Completed
 
@@ -27,6 +27,10 @@ Update this file whenever the current phase, active feature, or implementation s
 - Created minimal Clerk sign-in and sign-up pages that follow the feature spec layout and reuse the existing CSS variable theme.
 - Moved the editor workspace shell to `/editor` and added Clerk’s built-in `UserButton` to the navbar.
 - Refined the auth shell to a 50/50 desktop layout with a branded left-side panel that better matches the target reference.
+- Replaced the editor placeholder center card with the `/editor` home screen prompt and wired its `New Project` CTA into the dialog flow.
+- Added a dedicated project dialog state hook with mock owned/shared projects, live slug preview, and local create/rename/delete behavior.
+- Wired sidebar create, rename, and delete actions into project dialogs while hiding project item actions for collaborator-owned entries.
+- Added a mobile sidebar scrim so tapping outside the floating panel closes it on small screens.
 
 ## In Progress
 
@@ -34,7 +38,7 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Next Up
 
-- Start the next feature spec that builds on authenticated workspace access.
+- Start the next feature spec that builds on project selection and mock editor home interactions.
 
 ## Open Questions
 
@@ -47,5 +51,6 @@ Update this file whenever the current phase, active feature, or implementation s
 ## Session Notes
 
 - Auth implementation is based on `context/feature-specs/03-auth.md`.
+- Project dialog implementation is based on `context/feature-specs/04-project-dialogs.md`.
 - `npm run build` passes.
 - `npm run lint` passes.

@@ -30,7 +30,7 @@ export function EditorDialogShell({
   return (
     <DialogContent
       className={cn(
-        "rounded-3xl border border-surface-border bg-bg-elevated p-0 text-copy-primary shadow-[0_32px_96px_rgba(0,0,0,0.55)]",
+        "overflow-hidden rounded-3xl border border-surface-border bg-bg-elevated p-0 text-copy-primary shadow-[0_32px_96px_rgba(0,0,0,0.55)]",
         className,
       )}
       {...props}
@@ -51,7 +51,7 @@ export function EditorDialogShell({
       </div>
 
       {footer ? (
-        <DialogFooter className="rounded-b-3xl border-surface-border bg-bg-subtle/70 text-copy-secondary">
+        <DialogFooter className="mx-0 mb-0 rounded-none rounded-b-3xl border-surface-border bg-bg-subtle/70 px-6 py-4 text-copy-secondary">
           {footer}
         </DialogFooter>
       ) : null}
